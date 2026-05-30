@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Generated output
+*.pdf
+
+# Environment / secrets
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

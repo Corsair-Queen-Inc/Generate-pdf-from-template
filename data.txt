@@ -1,0 +1,75 @@
+{
+  "summary": "Senior data engineer with ~8 years of production data experience across consulting and healthcare environments, specializing in Data Transfer Agreement (DTA) ownership, gap analysis, and client-facing data delivery. Proven track record designing, building, and operating Snowflake-based data models and dbt transformations while leading cross-functional DTA negotiations with legal and security. Strong SQL and Python expertise used to reduce data incidents, accelerate onboarding, and optimize analytical query performance to meet business SLAs. Adept at translating business requirements into data contracts, technical specifications, and clear stakeholder-facing reports.",
+  "skills": [
+    [
+      { "text": "Data Governance & DTAs" },
+      { "text": ": " },
+      { "text": "Data Transfer Agreement (DTA) drafting & lifecycle management, Data sharing policies, Data retention & disposition, Legal & compliance collaboration, Data stewardship, Access controls & least privilege, Contract revision tracking, Data-sharing scope definition" }
+    ],
+    [
+      { "text": "Data Modeling & Warehouse" },
+      { "text": ": " },
+      { "text": "Snowflake, Dimensional & normalized schema design, dbt modeling & testing, Column-level lineage mapping, Partitioning & micro-partition strategy, Schema versioning, Data warehouse architecture, Integration runbooks" }
+    ],
+    [
+      { "text": "SQL & Analytics" },
+      { "text": ": " },
+      { "text": "Complex SQL (analytical & validation queries), T-SQL / SQL Server, Query performance tuning, Window functions & advanced joins, ETL SQL transformations, Analytical reporting, Data validation SQL patterns" }
+    ],
+    [
+      { "text": "Data Quality & Gap Analysis" },
+      { "text": ": " },
+      { "text": "Structured gap analysis, Schema & mapping reconciliation, Data profiling, Automated validation & reconciliation, Anomaly detection, SLO/SLA monitoring for data quality, Prioritization of remediation" }
+    ],
+    [
+      { "text": "Tools & Automation" },
+      { "text": ": " },
+      { "text": "Python for data tooling, Orchestration (Airflow / similar), CI/CD for data (Git workflows), Automated testing frameworks, Monitoring & alerting, Scripted ingestion & transforms" }
+    ],
+    [
+      { "text": "BI & Reporting" },
+      { "text": ": " },
+      { "text": "Tableau, Power BI, Dashboard design & performance tuning, KPI definition, Executive-ready reports, Metrics translation for non-technical stakeholders" }
+    ],
+    [
+      { "text": "Regulatory & Security" },
+      { "text": ": " },
+      { "text": "HIPAA & PHI handling practices, Data privacy controls, Audit trails & logging, Encryption considerations, Compliance reviews with security/legal" }
+    ],
+    [
+      { "text": "Communication & Stakeholder Engagement" },
+      { "text": ": " },
+      { "text": "Client-facing data liaison, Technical writing (DTA summaries, runbooks), Stakeholder presentations, Requirements gathering, Cross-functional workshop facilitation" }
+    ]
+  ],
+  "experience": [
+    {
+      "company": "CENTENE",
+      "title": "Sr. Data Engineer",
+      "start_date": "Apr 2021",
+      "end_date": "Present",
+      "achievements": [
+        "Owned end-to-end DTA lifecycle for client and partner arrangements—drafted and negotiated DTA language with legal, compliance, and security, maintained revision history, and implemented expiration and gap alerts to prevent undocumented data flows.",
+        "Led structured gap analysis between presentation views, internal schema (Scriptly), and source systems, produced prioritized remediation backlogs and reduced mapping-related production defects by 40%.",
+        "Designed and maintained Snowflake data models and dbt transformations, optimized heavy analytical SQL and implemented micro-partitioning and lifecycle policies to improve median query latency by ~60% and lower compute spend.",
+        "Served as primary client-facing data resource for onboarding and ongoing reporting—translated business needs into analytical specifications, led monthly data reviews, and delivered executive summaries and dashboards in Tableau/Power BI.",
+        "Authored field-level data dictionaries, lineage maps, and integration runbooks to standardize data handoffs and streamline onboarding across product and engineering teams.",
+        "Built Python-based automated validation and reconciliation pipelines to detect schema drift and surface gap alerts, reducing manual reconciliation effort and shortening incident MTTR.",
+        "Led rollout of a client-facing DTA + gap-analysis process that directly matches the role’s requirements for DTA ownership, cross-functional negotiation, and operationalized data-sharing controls."
+      ]
+    },
+    {
+      "company": "TCS",
+      "title": "Big Data Engineer",
+      "start_date": "May 2018",
+      "end_date": "Apr 2021",
+      "achievements": [
+        "Designed and implemented scalable ETL pipelines for large client engagements using Spark and Python, owning design, deployment, monitoring, and operational runbooks for ingestion into data warehouse environments, increased pipeline throughput ~3x through parallelization and tuning.",
+        "Implemented a data quality framework with SQL-based checks and automated alerts to validate incoming feeds and reduce production reconciliation tasks.",
+        "Acted as client-facing technical lead on multiple engagements—gathered business requirements, translated them into data specifications, and documented contractual scope for data exchanges resembling DTA considerations.",
+        "Collaborated with solution architects and product teams to define target schemas and data models, produced schema documentation and mapping artifacts used during integration and testing.",
+        "Built monitoring, alerting, and CI/CD workflows for data pipelines to improve reliability and accelerate delivery of production fixes and feature changes."
+      ]
+    }
+  ]
+}

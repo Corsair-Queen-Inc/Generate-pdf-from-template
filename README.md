@@ -15,7 +15,7 @@ node generate.js classic.js data.txt resume.pdf
 node generate.js [template.js] [data.txt] [output.pdf]
 ```
 
-Defaults: `classic.js`, `data.txt`, `resume.pdf`.
+Defaults: `styleA.js`, `data.txt`, `resume.pdf`.
 
 ## Files
 

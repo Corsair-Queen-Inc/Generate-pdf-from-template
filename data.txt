@@ -1,74 +1,98 @@
 {
-  "summary": "Senior data engineer with ~8 years of production data experience across consulting and healthcare environments, specializing in Data Transfer Agreement (DTA) ownership, gap analysis, and client-facing data delivery. Proven track record designing, building, and operating Snowflake-based data models and dbt transformations while leading cross-functional DTA negotiations with legal and security. Strong SQL and Python expertise used to reduce data incidents, accelerate onboarding, and optimize analytical query performance to meet business SLAs. Adept at translating business requirements into data contracts, technical specifications, and clear stakeholder-facing reports.",
+  "summary": "Senior data platform engineer with 10+ years designing and operating production lakehouse and ingestion systems end-to-end. Proven owner of Databricks-based lakehouse infrastructure, TB-scale ingestion pipelines, and orchestration platforms that reduced latency and lowered compute costs. Hands-on with Dagster/Airflow orchestration, infra-as-code (Terraform/Helm), observability (Prometheus/Grafana) and RBAC to deliver reliable, secure data foundations for analytics and ML teams. Excels at turning repeated ad-hoc needs into reusable platform primitives and pragmatic build-vs-buy decisions.",
   "skills": [
     [
-      { "text": "Data Governance & DTAs" },
+      { "text": "Core Languages & Query" },
       { "text": ": " },
-      { "text": "Data Transfer Agreement (DTA) drafting & lifecycle management, Data sharing policies, Data retention & disposition, Legal & compliance collaboration, Data stewardship, Access controls & least privilege, Contract revision tracking, Data-sharing scope definition" }
+      { "text": "Python, SQL, PySpark, Scala, Spark SQL" }
     ],
     [
-      { "text": "Data Modeling & Warehouse" },
+      { "text": "Data Pipeline & Orchestration" },
       { "text": ": " },
-      { "text": "Snowflake, Dimensional & normalized schema design, dbt modeling & testing, Column-level lineage mapping, Partitioning & micro-partition strategy, Schema versioning, Data warehouse architecture, Integration runbooks" }
+      { "text": "Dagster, Apache Airflow, Spark Structured Streaming, Kafka, Change Data Capture (CDC), ingestion frameworks" }
     ],
     [
-      { "text": "SQL & Analytics" },
+      { "text": "Data Warehouses, Lakes & Databases" },
       { "text": ": " },
-      { "text": "Complex SQL (analytical & validation queries), T-SQL / SQL Server, Query performance tuning, Window functions & advanced joins, ETL SQL transformations, Analytical reporting, Data validation SQL patterns" }
+      { "text": "Databricks, Delta Lake, Amazon S3, Redshift, Snowflake" }
     ],
     [
-      { "text": "Data Quality & Gap Analysis" },
+      { "text": "Data Architecture & Modeling" },
       { "text": ": " },
-      { "text": "Structured gap analysis, Schema & mapping reconciliation, Data profiling, Automated validation & reconciliation, Anomaly detection, SLO/SLA monitoring for data quality, Prioritization of remediation" }
+      { "text": "Lakehouse architecture, partitioning, schema evolution, dimensional modeling, event modelling" }
     ],
     [
-      { "text": "Tools & Automation" },
+      { "text": "Cloud Data Platforms" },
       { "text": ": " },
-      { "text": "Python for data tooling, Orchestration (Airflow / similar), CI/CD for data (Git workflows), Automated testing frameworks, Monitoring & alerting, Scripted ingestion & transforms" }
+      { "text": "AWS (S3, Redshift, Glue), GCP, EMR, Kinesis" }
     ],
     [
-      { "text": "BI & Reporting" },
+      { "text": "DataOps & Infrastructure" },
       { "text": ": " },
-      { "text": "Tableau, Power BI, Dashboard design & performance tuning, KPI definition, Executive-ready reports, Metrics translation for non-technical stakeholders" }
+      { "text": "Terraform, Kubernetes, Docker, CI/CD for data pipelines, Helm" }
     ],
     [
-      { "text": "Regulatory & Security" },
+      { "text": "Data Testing & Quality" },
       { "text": ": " },
-      { "text": "HIPAA & PHI handling practices, Data privacy controls, Audit trails & logging, Encryption considerations, Compliance reviews with security/legal" }
+      { "text": "Great Expectations, unit testing, data contracts, SQL assertions" }
     ],
     [
-      { "text": "Communication & Stakeholder Engagement" },
+      { "text": "Data Security & Governance" },
       { "text": ": " },
-      { "text": "Client-facing data liaison, Technical writing (DTA summaries, runbooks), Stakeholder presentations, Requirements gathering, Cross-functional workshop facilitation" }
+      { "text": "RBAC/IAM, encryption-at-rest, PII masking, audit logging, access reviews" }
+    ],
+    [
+      { "text": "Monitoring & Observability" },
+      { "text": ": " },
+      { "text": "Prometheus, Grafana, Datadog, Spark metrics, SLOs and alerting" }
+    ],
+    [
+      { "text": "Engineering & Collaboration" },
+      { "text": ": " },
+      { "text": "Cross-functional partnership, stakeholder management, code review, mentorship, agile delivery" }
     ]
   ],
   "experience": [
     {
-      "company": "CENTENE",
-      "title": "Sr. Data Engineer",
-      "start_date": "Apr 2021",
-      "end_date": "Present",
+      "company": "Infosys",
+      "title": "Lead Data Engineer",
+      "start_date": "Mar 2021",
+      "end_date": "Apr 2026",
       "achievements": [
-        "Owned end-to-end DTA lifecycle for client and partner arrangements—drafted and negotiated DTA language with legal, compliance, and security, maintained revision history, and implemented expiration and gap alerts to prevent undocumented data flows.",
-        "Led structured gap analysis between presentation views, internal schema (Scriptly), and source systems, produced prioritized remediation backlogs and reduced mapping-related production defects by 40%.",
-        "Designed and maintained Snowflake data models and dbt transformations, optimized heavy analytical SQL and implemented micro-partitioning and lifecycle policies to improve median query latency by ~60% and lower compute spend.",
-        "Served as primary client-facing data resource for onboarding and ongoing reporting—translated business needs into analytical specifications, led monthly data reviews, and delivered executive summaries and dashboards in Tableau/Power BI.",
-        "Authored field-level data dictionaries, lineage maps, and integration runbooks to standardize data handoffs and streamline onboarding across product and engineering teams.",
-        "Built Python-based automated validation and reconciliation pipelines to detect schema drift and surface gap alerts, reducing manual reconciliation effort and shortening incident MTTR.",
-        "Led rollout of a client-facing DTA + gap-analysis process that directly matches the role’s requirements for DTA ownership, cross-functional negotiation, and operationalized data-sharing controls."
+        "Designed and owned Databricks-based lakehouse ingestion pipelines using Spark and Python, reducing end-to-end data latency by 42% for TB-scale product telemetry.",
+        "Refactored CDC ingestion with Kafka and Spark Structured Streaming to improve throughput by 3x while cutting compute costs 30% through optimized partitioning.",
+        "Built Dagster orchestration framework, authored reusable solids/operators and monitoring hooks, increasing pipeline reliability and accelerating deployments.",
+        "Implemented infra-as-code for lakehouse resources with Terraform and Helm, enabling reproducible Databricks workspace provisioning and reducing setup time from days to hours.",
+        "Established observability with Prometheus, Grafana and Spark metrics, cut mean time to detect data incidents 55% and enforced SLO-driven alerting.",
+        "Codified RBAC and privacy controls using IAM policies and encryption-at-rest workflows, improving compliance posture and simplifying access reviews for PII data.",
+        "Partnered with analytics, product and ML research teams to turn repetitive ad-hoc queries into shared Delta tables and dbt models, reducing duplicated ETL work 47%.",
+        "Piloted agentic data access patterns and secure API entrypoints for model agents using REST gateways and scoped credentials, preserving audit trails and enforcing least privilege."
       ]
     },
     {
-      "company": "TCS",
-      "title": "Big Data Engineer",
-      "start_date": "May 2018",
-      "end_date": "Apr 2021",
+      "company": "SoftServe",
+      "title": "Senior Data Engineer",
+      "start_date": "Jun 2018",
+      "end_date": "Feb 2021",
       "achievements": [
-        "Designed and implemented scalable ETL pipelines for large client engagements using Spark and Python, owning design, deployment, monitoring, and operational runbooks for ingestion into data warehouse environments, increased pipeline throughput ~3x through parallelization and tuning.",
-        "Implemented a data quality framework with SQL-based checks and automated alerts to validate incoming feeds and reduce production reconciliation tasks.",
-        "Acted as client-facing technical lead on multiple engagements—gathered business requirements, translated them into data specifications, and documented contractual scope for data exchanges resembling DTA considerations.",
-        "Collaborated with solution architects and product teams to define target schemas and data models, produced schema documentation and mapping artifacts used during integration and testing.",
-        "Built monitoring, alerting, and CI/CD workflows for data pipelines to improve reliability and accelerate delivery of production fixes and feature changes."
+        "Designed ETL pipelines on Spark and Python to ingest 100M+ daily events into Delta Lake on S3, improving downstream query speed 35%.",
+        "Built Airflow DAGs, templated operators and monitoring tasks to centralize orchestration and improve job reliability for analytics consumers.",
+        "Implemented schema evolution and partitioning strategies in Databricks, lowering query costs 22% and improving scan efficiency for analytics teams.",
+        "Introduced Kafka-based change capture for product events, enabling near-real-time downstream analytics and improving ML feature freshness.",
+        "Led cross-functional data contracts with Product and BI to standardize event definitions and reduce ad-hoc data requests, improving analyst productivity.",
+        "Automated CI/CD for data pipelines using Jenkins and Terraform, cutting deployment lead time from days to under two hours."
+      ]
+    },
+    {
+      "company": "ScienceSoft",
+      "title": "Data Engineer",
+      "start_date": "Jan 2016",
+      "end_date": "May 2018",
+      "achievements": [
+        "Built batch Spark jobs and Python ETL to consolidate multiple CRM sources into a single Redshift schema, decreasing report latency 48%.",
+        "Developed ingestion using S3, Glue and Airflow, establishing reliable schedules and failure alerts with CloudWatch and PagerDuty integration.",
+        "Authored data quality tests and alerts using Great Expectations and SQL assertions, reducing production data incidents by 60%.",
+        "Collaborated with analytics and product owners to model events and define partitioning strategies, improving query performance and storage efficiency."
       ]
     }
   ]

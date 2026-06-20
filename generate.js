@@ -13,10 +13,29 @@
 
 const fs = require("fs");
 const path = require("path");
+const Module = require("module");
+const { sanitizeResumeBuffer } = require("./lib/textUtils");
 
 const ROOT = __dirname;
 
-/** Fixed header/contact block — merged into every PDF (data.txt supplies summary/skills/experience). */
+// Redirect ../lib/* requires from a template file to this project's lib/ directory.
+// This lets templates that were written for a parent-directory layout (require("../lib/..."))
+// work correctly when the template lives in the project root.
+function shimLibForTemplate(absTemplatePath) {
+  const original = Module._resolveFilename;
+  Module._resolveFilename = function (request, parent, isMain, options) {
+    if (parent && parent.filename === absTemplatePath) {
+      const m = request.match(/^\.\.\/lib\/(.+)$/);
+      if (m) {
+        const candidate = path.join(ROOT, "lib", `${m[1]}.js`);
+        if (fs.existsSync(candidate)) return candidate;
+      }
+    }
+    return original.call(this, request, parent, isMain, options);
+  };
+}
+
+/** Fixed header/contact block merged into every PDF (data.txt supplies summary/skills/experience). */
 const CONTACT_DATA = {
   name: "Kevin Horton",
   email: "kevin.horton@email.com",
@@ -30,56 +49,6 @@ const CONTACT_DATA = {
     end_date: "2014",
   },
 };
-
-function normalizeParagraphText(value) {
-  return String(value ?? "")
-    .replace(/[\u2010\u2011\u2012\u2013\u2014\u2212\uFE58\uFE63\uFF0D]/g, "-")
-    .replace(/[\u00A0\u202F\u2007]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function achievementToString(value) {
-  if (value == null) return "";
-  if (typeof value === "string") return normalizeParagraphText(value);
-  if (typeof value === "object" && value.text != null) {
-    return normalizeParagraphText(value.text);
-  }
-  return normalizeParagraphText(String(value));
-}
-
-function sanitizeResumeBuffer(buffer) {
-  if (!buffer || typeof buffer !== "object") return buffer;
-
-  if (buffer.summary) {
-    buffer.summary = normalizeParagraphText(buffer.summary);
-  }
-
-  if (Array.isArray(buffer.skills)) {
-    buffer.skills = buffer.skills
-      .filter((row) => Array.isArray(row) && row.length > 0)
-      .map((row) =>
-        row.map((segment) => {
-          if (!segment || typeof segment !== "object") return segment;
-          if (segment.text == null) return segment;
-          return { ...segment, text: normalizeParagraphText(segment.text) };
-        })
-      );
-  }
-
-  if (Array.isArray(buffer.experience)) {
-    buffer.experience = buffer.experience.map((exp) => {
-      if (!exp || typeof exp !== "object") return exp;
-      const next = { ...exp };
-      if (Array.isArray(next.achievements)) {
-        next.achievements = next.achievements.map(achievementToString).filter(Boolean);
-      }
-      return next;
-    });
-  }
-
-  return buffer;
-}
 
 function defaultTemplatePath() {
   const candidates = [
@@ -121,13 +90,15 @@ function loadTemplate(templatePath) {
     throw new Error(`Template not found: ${templatePath}`);
   }
 
-  delete require.cache[templatePath];
-  const mod = require(templatePath);
+  const absTemplate = path.resolve(templatePath);
+  shimLibForTemplate(absTemplate);
+  delete require.cache[absTemplate];
+  const mod = require(absTemplate);
 
-  const createPdf = mod.createResumePdf || mod.createResumePdfA;
+  const createPdf = mod.createResumePdf || mod.createResumePdfA || mod.createResumePdfD;
   if (typeof createPdf !== "function") {
     throw new Error(
-      `Template must export createResumePdf or createResumePdfA: ${templatePath}`
+      `Template must export createResumePdf, createResumePdfA, or createResumePdfD: ${templatePath}`
     );
   }
 
@@ -149,10 +120,10 @@ async function main() {
   const pdfBuffer = await createPdf(resumeData, {});
 
   fs.writeFileSync(output, pdfBuffer);
-  console.log(`✅ Wrote ${output} (${pdfBuffer.length} bytes)`);
+  console.log(`Wrote ${output} (${pdfBuffer.length} bytes)`);
 }
 
 main().catch((err) => {
-  console.error(`❌ ${err.message}`);
+  console.error(`Error: ${err.message}`);
   process.exit(1);
 });

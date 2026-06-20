@@ -1,5 +1,10 @@
 {
+  "scripts": {
+    "watch": "node watch.js styleD.js data.txt resume.pdf",
+    "generate": "node generate.js styleD.js data.txt resume.pdf"
+  },
   "dependencies": {
+    "@fontsource/eb-garamond": "^5.2.7",
     "pdfkit": "^0.18.0"
   }
 }
